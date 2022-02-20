@@ -43,3 +43,5 @@ insert into hostels (hostel_name) values ('test hostel') RETURNING hostel_name;
 select * from hostels where id = 2;
 
 select hostel_name from hostels where id === 2;
+
+update hostels SET hostel_name = 'sdfdsds' where id = 1;
