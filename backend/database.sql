@@ -40,5 +40,6 @@ INSERT INTO messages (user_id, content) VALUES (4,'Hello Europe');
 insert into hostels (hostel_name) values ('test hostel') RETURNING hostel_name; 
 
 
+select * from hostels where id = 2;
 
-
+select hostel_name from hostels where id === 2;
