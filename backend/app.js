@@ -1,13 +1,6 @@
-
 const { Pool } = require("pg");
-const pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "Node-practice-1",
-    password: "Pro@450",
-    port: 5432,
-
-})
+const secret = require("./secret.json")
+const pool = new Pool(secret);
 
 const api = () => {
     const getHostels = (req, res) => {
@@ -82,7 +75,7 @@ const api = () => {
                     .send(`Hostel with id: ${result.rows[0].id} is successfully deleted`)
             } else {
                 console.log("error", error);
-                res.status(500).send("Hostel id does not exists!")
+                res.status(404).send("Hostel id does not exists!")
             }
 
         } catch (error) {
